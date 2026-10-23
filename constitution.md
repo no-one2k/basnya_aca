@@ -3,8 +3,7 @@
 **ACA** = *Agent for Citation Augmentation.*
 
 This is a **forward-looking vision document**. It describes where ACA is meant to
-go — not what the current throwaway prototype happens to implement. Where the
-prototype and this document disagree, **this document wins**.
+go.
 
 Scope of this iteration is intentionally limited to **Mission** and **Tech
 Stack**. Broader principles, governance, and roadmap are deferred to a later
@@ -93,8 +92,7 @@ to shortlist candidates.
 - *Rationale:* at personal scale (one author, a bounded corpus) the simplest
   thing that can possibly work is a plain store plus an LLM that reasons over
   candidates. This avoids the cost, complexity, and quality-tuning burden of an
-  embedding pipeline before it's proven necessary, and sidesteps the prototype's
-  non-viable fake hash-based embeddings entirely.
+  embedding pipeline before it's proven necessary.
 
 ### Vector store & embeddings — Chroma + real multilingual embeddings · *future / provisional*
 
@@ -135,11 +133,10 @@ citations are primarily Russian.
 
 ACA uses **lightweight structured logging** (to stdout and/or a local file) of
 each pipeline step (inputs, shortlisted candidates, LLM calls, chosen citations).
-**No hosted tracing service** (e.g. LangSmith) is required.
+**No hosted tracing service** is required.
 - *Rationale:* for a personal, locally-run tool, plain logs give enough
   visibility to debug and tune without the overhead or external dependency of a
-  tracing platform. (This deliberately departs from the prototype's LangSmith
-  integration.)
+  tracing platform.
 
 ### Runtime & deployment — local script, invoked from a Claude Code skill · *settled*
 
